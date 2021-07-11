@@ -5,7 +5,7 @@ setup() {
 @test "version is correct" {
   run docker run alpine:3.5 cat /etc/os-release
   [ $status -eq 0 ]
-  [ "${lines[2]}" = "VERSION_ID=3.5.2" ]
+  [ "${lines[2]}" = "VERSION_ID=3.5.3" ]
 }
 
 @test "package installs cleanly" {
@@ -43,3 +43,8 @@ setup() {
   [ $status -eq 1 ]
 }
 
+@test "/dev/null should be missing" {
+  run sh -c "docker export $(docker create alpine:3.5) | tar -t dev/null"
+  [ "$output" != "dev/null" ]
+  [ $status -ne 0 ]
+}

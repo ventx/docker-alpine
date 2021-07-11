@@ -1,10 +1,9 @@
 # docker-alpine
 
-[![CircleCI](https://img.shields.io/circleci/project/gliderlabs/docker-alpine/release.svg)](https://circleci.com/gh/gliderlabs/docker-alpine)
+[![CircleCI](https://img.shields.io/circleci/project/github/gliderlabs/docker-alpine/release.svg)](https://circleci.com/gh/gliderlabs/docker-alpine)
 [![Docker Stars](https://img.shields.io/docker/stars/gliderlabs/alpine.svg)][hub]
 [![Docker Pulls](https://img.shields.io/docker/pulls/gliderlabs/alpine.svg)][hub]
 [![Slack](http://glider-slackin.herokuapp.com/badge.svg)][slack]
-[![ImageLayers](https://imagelayers.io/badge/gliderlabs/alpine:latest.svg)](https://imagelayers.io/?images=gliderlabs/alpine:latest 'Get your own badge on imagelayers.io')
 
 
 A super small Docker image based on [Alpine Linux][alpine]. The image is only 5 MB and has access to a package repository that is much more complete than other BusyBox based images.
@@ -80,7 +79,7 @@ The motivation for this project and modifications to `mkimage.sh` are highly ins
 
 [![Fastly](https://github.com/gliderlabs/docker-alpine/raw/master/logo_fastly.png)][fastly]
 
-[Fastly][fastly] provides the CDN for our Alpine Linux package repository. This is allows super speedy package downloads from all over the globe!
+[Fastly][fastly] provides the CDN for our Alpine Linux package repository. This allows super speedy package downloads from all over the globe!
 
 ## License
 

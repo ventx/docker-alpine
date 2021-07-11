@@ -5,7 +5,7 @@ setup() {
 @test "version is correct" {
   run docker run alpine:3.6 cat /etc/os-release
   [ $status -eq 0 ]
-  [ "${lines[2]}" = "VERSION_ID=3.6.2" ]
+  [ "${lines[2]}" = "VERSION_ID=3.6.5" ]
 }
 
 @test "package installs cleanly" {
@@ -41,4 +41,10 @@ setup() {
 @test "root password is disabled" {
   run docker run --user nobody alpine:3.6 su
   [ $status -eq 1 ]
+}
+
+@test "/dev/null should be missing" {
+  run sh -c "docker export $(docker create alpine:3.6) | tar -t dev/null"
+  [ "$output" != "dev/null" ]
+  [ $status -ne 0 ]
 }
